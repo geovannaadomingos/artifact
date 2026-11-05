@@ -14,6 +14,7 @@ export function TaskCard({ task, onDelete, isDeleting = false }: TaskCardProps) 
   const formattedDate = new Intl.DateTimeFormat("en-US", {
     dateStyle: "medium",
     timeStyle: "short",
+    timeZone: "UTC",
   }).format(new Date(task.dataCriacao));
 
   return (
@@ -66,7 +67,7 @@ export function TaskCard({ task, onDelete, isDeleting = false }: TaskCardProps) 
       <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
         <div className="flex items-center gap-1.5">
           <Calendar className="w-3.5 h-3.5" />
-          <span>Created on: {formattedDate}</span>
+          <span suppressHydrationWarning>Created on: {formattedDate}</span>
         </div>
         <span className="font-mono text-[10px] text-slate-300 truncate max-w-[120px]" title={task.id}>
           #{task.id.slice(0, 8)}

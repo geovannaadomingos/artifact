@@ -6,8 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint",
-    "test": "node node_modules/typescript/lib/tsc.js tests/task.test.ts src/server/trpc/router.ts src/server/trpc/routers/task.router.ts src/server/trpc/init.ts src/server/services/task.service.ts src/server/repositories/task.repository.ts src/server/schemas/task.schema.ts src/server/errors/task.errors.ts --outDir dist-test --module commonjs --target es2020 --moduleResolution node --esModuleInterop --skipLibCheck && node --test dist-test/tests/task.test.js"
+    "lint": "next lint",
+    "test": "node scripts/run-tests.mjs"
   },
   "dependencies": {
     "react": "19.1.0",

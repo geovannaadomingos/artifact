@@ -13,7 +13,10 @@ src/
 ├── app/
 │   ├── api/trpc/[trpc]/route.ts  # tRPC Fetch HTTP adapter for Next.js App Router
 │   ├── layout.tsx                # Root layout with TRPCProvider and global navigation
-│   └── page.tsx                  # Server Component for task listing with SSR prefetching
+│   ├── page.tsx                  # Server Component for task listing with SSR prefetching
+│   └── tasks/
+│       ├── new/page.tsx          # Client Component for task creation
+│       └── [id]/edit/page.tsx    # Client Component for task editing
 │
 ├── components/
 │   ├── tasks/

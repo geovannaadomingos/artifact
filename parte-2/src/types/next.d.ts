@@ -26,3 +26,18 @@ declare module "next/link" {
   export default Link;
 }
 
+declare module "next/navigation" {
+  export interface AppRouterInstance {
+    back(): void;
+    forward(): void;
+    refresh(): void;
+    push(href: string, options?: any): void;
+    replace(href: string, options?: any): void;
+    prefetch(href: string, options?: any): void;
+  }
+  export function useRouter(): AppRouterInstance;
+  export function useParams<T = Record<string, string | string[]>>(): T;
+  export function useSearchParams(): URLSearchParams;
+  export function usePathname(): string;
+}
+

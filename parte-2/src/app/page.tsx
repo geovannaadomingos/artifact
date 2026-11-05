@@ -2,7 +2,7 @@ import { trpc, HydrateClient } from "@/trpc/server";
 import { TaskList } from "@/components/tasks/task-list";
 
 export default async function HomePage() {
-  void trpc.task.list.prefetchInfinite({ limit: 10 });
+  await trpc.task.list.prefetchInfinite({ limit: 10 });
 
   return (
     <HydrateClient>
